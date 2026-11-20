@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Online Examination System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Online Examination System</h1>
+
+  <!-- Sprint 1: Login -->
+  <div id="loginSection" class="card">
+    <h2>User Login</h2>
+    <input type="text" id="username" placeholder="Enter your name" />
+    <select id="role">
+      <option value="student">Student</option>
+      <option value="faculty">Faculty</option>
+    </select>
+    <button onclick="loginUser()">Continue</button>
+    <p id="loginMsg" class="msg"></p>
+  </div>
+
+  <!-- Main Dashboard -->
+  <div id="appSection" class="hidden">
+    <div class="card">
+      <span id="welcomeText"></span>
+      <button onclick="logoutUser()">Logout</button>
+      <button id="analyticsButton" class="hidden" onclick="loadAnalytics()">View Results & Analytics</button>
+    </div>
+
+    <!-- Sprint 2: Faculty Create Exam -->
+    <div id="facultySection" class="card hidden">
+      <h2>Create Exam (Faculty)</h2>
+      <input type="text" id="examTitle" placeholder="Exam Title" />
+      <input type="number" id="examDuration" value="2" min="1" placeholder="Minutes" />
+      <h3>Add Question</h3>
+      <input type="text" id="qText" placeholder="Question text" style="width: 95%;" /><br />
+      <input type="text" id="opt0" placeholder="Option 1" />
+      <input type="text" id="opt1" placeholder="Option 2" />
+      <input type="text" id="opt2" placeholder="Option 3" />
+      <input type="text" id="opt3" placeholder="Option 4" /><br />
+      <label>Correct Option (1-4):
+        <select id="correctOpt">
+          <option value="0">Option 1</option>
+          <option value="1">Option 2</option>
+          <option value="2">Option 3</option>
+          <option value="3">Option 4</option>
+        </select>
+      </label>
+      <button onclick="addQuestionToDraft()">Add Question</button>
+      <button onclick="saveExam()">Save Exam</button>
+      <p id="draftInfo"></p>
+      <p id="facultyMsg" class="msg"></p>
+    </div>
+
+    <!-- Sprint 2 & 3: Available Exams & Timed Test -->
+    <div class="card">
+      <h2>Available Exams</h2>
+      <div id="examList"></div>
+    </div>
+
+    <div id="takeExamSection" class="card hidden">
+      <h2 id="activeExamTitle"></h2>
+      <p class="timer">Time Left: <span id="timerDisplay">00:00</span></p>
+      <div id="questionsContainer"></div>
+      <button onclick="submitExam()">Submit Exam</button>
+      <p id="resultMsg" class="msg"></p>
+    </div>
+
+    <!-- Sprint 4: Analytics -->
+    <div id="analyticsSection" class="card hidden">
+      <h2>Results & Analytics</h2>
+      <div id="analyticsContainer"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
