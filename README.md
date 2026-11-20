@@ -21,5 +21,5 @@ Traditional or manual exam handling can be slow to evaluate and hard to track. T
 1. Install **Node.js** (and optionally **MongoDB** / MongoDB Atlas).
 2. Clone the repository and open the project folder:
    ```bash
-   git clone <YOUR_GITHUB_REPO_URL>
+   git clone https://github.com/kamalinianandhan/online-examination-system
    cd online-exam-system
